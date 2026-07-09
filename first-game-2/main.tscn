@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c1s17ek26vg31"]
+
+[ext_resource type="Texture2D" uid="uid://d0fxkv7l43iy5" path="res://icon.svg" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c43kuajvlbpah" path="res://duck.tscn" id="2_h2yge"]
+
+[node name="Node2D" type="Node2D" unique_id=1234164896]
+
+[node name="logo" type="Sprite2D" parent="." unique_id=1609389598]
+position = Vector2(409, 42)
+texture = ExtResource("1_0xm2m")
+centered = false
+
+[node name="Duck" parent="." unique_id=27048087 instance=ExtResource("2_h2yge")]
+position = Vector2(134, 144)
+
+[node name="Duck2" parent="." unique_id=744980468 instance=ExtResource("2_h2yge")]
+position = Vector2(292, 460)
+
+[node name="Duck3" parent="." unique_id=1879167018 instance=ExtResource("2_h2yge")]
+position = Vector2(254, 65)
+
+[node name="Duck4" parent="." unique_id=1403053477 instance=ExtResource("2_h2yge")]
+position = Vector2(436, 254)

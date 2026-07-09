@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c43kuajvlbpah"]
+
+[ext_resource type="Texture2D" uid="uid://vs8jqhggnpg4" path="res://Assets/duck_brown.png" id="1_r8k62"]
+[ext_resource type="Script" uid="uid://xk45u1t560uj" path="res://duck.gd" id="1_v1dtq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3msd4"]
+radius = 54.147945
+
+[node name="Duck" type="Area2D" unique_id=27048087]
+script = ExtResource("1_v1dtq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=580138308]
+shape = SubResource("CircleShape2D_3msd4")
+
+[node name="DuckBrown" type="Sprite2D" parent="." unique_id=978730680]
+texture = ExtResource("1_r8k62")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://vs8jqhggnpg4" path="res://Assets/duck_brown.png" id="1_r8k62"]
 [ext_resource type="Script" uid="uid://xk45u1t560uj" path="res://duck.gd" id="1_v1dtq"]
+[ext_resource type="AudioStream" uid="uid://6gv7yg0vyu15" path="res://Assets/805039__designerschoice__toonanml-blue-snowball-microphone-cu_duck-whistle-single-quack-02_nicholas-judy_tdc.wav" id="3_mbejg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3msd4"]
 radius = 54.147945
@@ -15,4 +16,8 @@ shape = SubResource("CircleShape2D_3msd4")
 [node name="DuckBrown" type="Sprite2D" parent="." unique_id=978730680]
 texture = ExtResource("1_r8k62")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=145511684]
+stream = ExtResource("3_mbejg")
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

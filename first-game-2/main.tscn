@@ -1,23 +1,45 @@
 [gd_scene format=3 uid="uid://c1s17ek26vg31"]
 
 [ext_resource type="Texture2D" uid="uid://d0fxkv7l43iy5" path="res://icon.svg" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://b80030hf1yrww" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c43kuajvlbpah" path="res://duck.tscn" id="2_h2yge"]
 
-[node name="Node2D" type="Node2D" unique_id=1234164896]
+[node name="Main" type="Node2D" unique_id=1234164896]
+script = ExtResource("1_h2yge")
 
 [node name="logo" type="Sprite2D" parent="." unique_id=1609389598]
-position = Vector2(409, 42)
+position = Vector2(592, 36)
 texture = ExtResource("1_0xm2m")
 centered = false
 
-[node name="Duck" parent="." unique_id=27048087 instance=ExtResource("2_h2yge")]
-position = Vector2(134, 144)
+[node name="Control" type="Control" parent="." unique_id=1792907584]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Duck2" parent="." unique_id=744980468 instance=ExtResource("2_h2yge")]
+[node name="Clicks" type="Label" parent="Control" unique_id=878459292]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 31.0
+offset_right = 144.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.23472267, 0.74393296, 0.4816991, 1)
+theme_override_colors/font_outline_color = Color(0.9411765, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Ducks clicked: "
+
+[node name="DuckManager" type="Node2D" parent="." unique_id=303662095]
+
+[node name="Duck" parent="DuckManager" unique_id=27048087 instance=ExtResource("2_h2yge")]
+position = Vector2(132, 232)
+
+[node name="Duck2" parent="DuckManager" unique_id=744980468 instance=ExtResource("2_h2yge")]
 position = Vector2(292, 460)
 
-[node name="Duck3" parent="." unique_id=1879167018 instance=ExtResource("2_h2yge")]
-position = Vector2(254, 65)
+[node name="Duck3" parent="DuckManager" unique_id=1879167018 instance=ExtResource("2_h2yge")]
+position = Vector2(282, 131)
 
-[node name="Duck4" parent="." unique_id=1403053477 instance=ExtResource("2_h2yge")]
-position = Vector2(436, 254)
+[node name="Duck4" parent="DuckManager" unique_id=1403053477 instance=ExtResource("2_h2yge")]
+position = Vector2(513, 296)

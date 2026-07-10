@@ -1,22 +1,25 @@
 extends Area2D
 
-var bananas = 10
-func do_something_with_bananas(num_of_bananas) -> void:
-	for n in range(num_of_bananas):
-		print(n)
-		if n % 2 == 0:
-			print("even bananas, beautiful")
-		else:
-			print("odd banana, dont eat")
+signal clicked
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	do_something_with_bananas(bananas)
-	#pass # Replace with function body.
+	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	pass # Replace with function body.
+	#print(event)
+	if event is InputEventMouseButton:
+		if event.button_index == 1:
+			if event.pressed == true:
+				#print("duck")
+				$AudioStreamPlayer2D.play()
+				$CollisionShape2D.disabled
+				hide()
+				clicked.emit()
+				
+func _on_audio_stream_player_2d_finished() -> void:
+	queue_free()

@@ -20,7 +20,8 @@ func _ready() -> void:
 	score_label = $Control/Clicks.text
 	$Control/Clicks.text = score_label + "%s" % score
 	
-	display = DisplayServer.screen_get_size()
+	display = DisplayServer.screen_get_size(get_window().current_screen)
+	print(display)
 	
 	# create the set amount of ducks
 	for n in range(0, number_of_ducks):
@@ -28,7 +29,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print($Countdown.time_left)
+	#print($Countdown.time_left)
+	pass
 	
 func _on_duck_clicked() -> void:
 	score = score + 1

@@ -1,0 +1,13 @@
+join wizard rightmost
+wizard: I am the wizard!
+wizard: What do you seek?
+- Fame
+	set {choice} = "fame"
+- Fortune
+	set {choice} = "fortune"
+- Ducks
+	set {choice} = "foo"
+wizard: I see. So be it!
+if {choice} == "foo":
+	leave wizard
+	[signal arg="duck_signal"]

@@ -22,10 +22,13 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
+"jane": "res://characters/jane.dch",
+"jeff": "res://characters/jeff.dch",
 "wizard": "res://characters/wizard.dch"
 }
 directories/dtl_directory={
-"first": "res://timeline/first.dtl"
+"first": "res://timeline/first.dtl",
+"intro": "res://timeline/intro.dtl"
 }
 layout/style_directory={
 "": "res://styles/style.tres",
@@ -74,8 +77,7 @@ audio/channel_defaults={
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
-window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

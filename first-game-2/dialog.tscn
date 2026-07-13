@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dpu245j4q2st2"]
+
+[ext_resource type="Script" uid="uid://juu8g6iqayoq" path="res://dialog.gd" id="1_7voku"]
+[ext_resource type="Texture2D" uid="uid://ddykavj73oysf" path="res://Assets/philipp-upR8raSXvwg-unsplash.jpg" id="2_5wlj5"]
+
+[node name="Dialog" type="Node2D" unique_id=36270510]
+script = ExtResource("1_7voku")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1663348072]
+scale = Vector2(0.12919061, 0.12877154)
+texture = ExtResource("2_5wlj5")
+centered = false

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ctyglp82apj51"]
+
+[ext_resource type="Script" uid="uid://big4sccod1i41" path="res://duck_explorer.gd" id="1_qykka"]
+[ext_resource type="Texture2D" uid="uid://dnnx3la7xm0rx" path="res://Assets/duck_outline_yellow.png" id="1_tonxq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3msd4"]
+radius = 59.5399
+
+[node name="DuckExplorer" type="CharacterBody2D" unique_id=1654521198]
+script = ExtResource("1_qykka")
+
+[node name="DuckOutlineYellow" type="Sprite2D" parent="." unique_id=915839409]
+texture = ExtResource("1_tonxq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1724213456]
+shape = SubResource("CircleShape2D_3msd4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=670447433]

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://gwmts33fq7kf"]
+
+[ext_resource type="Texture2D" uid="uid://b272ggnlkbbpo" path="res://Assets/bg_blue.png" id="1_krrcn"]
+[ext_resource type="Script" uid="uid://b58euqs4014a7" path="res://duck_race.gd" id="1_w4u8j"]
+[ext_resource type="PackedScene" uid="uid://c4yp74ce54bg1" path="res://Duck.tscn" id="2_um0lb"]
+[ext_resource type="Texture2D" uid="uid://ckxdicjeyerqu" path="res://Assets/duck_outline_white.png" id="3_5ryp6"]
+[ext_resource type="Texture2D" uid="uid://dnnx3la7xm0rx" path="res://Assets/duck_outline_yellow.png" id="4_l3krs"]
+[ext_resource type="PackedScene" uid="uid://m10d2w35m28t" path="res://Target.tscn" id="5_yo5kh"]
+
+[node name="DuckRace" type="Node2D" unique_id=720284843]
+script = ExtResource("1_w4u8j")
+
+[node name="BgBlue" type="Sprite2D" parent="." unique_id=1326431951]
+scale = Vector2(7.519531, 4.2343745)
+texture = ExtResource("1_krrcn")
+centered = false
+
+[node name="Target" parent="." unique_id=604975836 instance=ExtResource("5_yo5kh")]
+position = Vector2(962, 235)
+
+[node name="Target2" parent="." unique_id=1794422183 instance=ExtResource("5_yo5kh")]
+position = Vector2(969, 840)
+
+[node name="Duck" parent="." unique_id=1698711848 instance=ExtResource("2_um0lb")]
+position = Vector2(210, 231)
+sprite = ExtResource("3_5ryp6")
+move_key = "d"
+
+[node name="Duck2" parent="." unique_id=530317487 instance=ExtResource("2_um0lb")]
+position = Vector2(1743, 852)
+sprite = ExtResource("4_l3krs")
+move_key = "j"
+go_right = false
+
+[node name="Timer" type="Timer" parent="." unique_id=1349487994]
+wait_time = 2.0
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1839041165]
+
+[connection signal="hit_target" from="Duck" to="." method="_on_duck_hit_target"]
+[connection signal="hit_target" from="Duck2" to="." method="_on_duck_hit_target"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

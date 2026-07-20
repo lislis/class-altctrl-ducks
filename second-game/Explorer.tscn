@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dnedo0nu4gwah"]
+
+[ext_resource type="PackedScene" uid="uid://ctyglp82apj51" path="res://DuckExplorer.tscn" id="1_5iprl"]
+[ext_resource type="Texture2D" uid="uid://b272ggnlkbbpo" path="res://Assets/bg_blue.png" id="1_63yaa"]
+[ext_resource type="Texture2D" uid="uid://6txasc7ge0uh" path="res://Assets/target_red2_outline.png" id="3_8rdw0"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_8rdw0"]
+
+[node name="Explorer" type="Node2D" unique_id=452628076]
+
+[node name="bg" type="Node2D" parent="." unique_id=969226000]
+
+[node name="BgBlue" type="Sprite2D" parent="bg" unique_id=1899508759]
+position = Vector2(-583, -385)
+scale = Vector2(4.5234375, 2.96875)
+texture = ExtResource("1_63yaa")
+
+[node name="BgBlue2" type="Sprite2D" parent="bg" unique_id=629797805]
+position = Vector2(572.99994, -381.00003)
+scale = Vector2(4.5234375, 2.96875)
+texture = ExtResource("1_63yaa")
+
+[node name="BgBlue3" type="Sprite2D" parent="bg" unique_id=1146679376]
+position = Vector2(-585.00024, 374.99997)
+scale = Vector2(4.5234375, 2.96875)
+texture = ExtResource("1_63yaa")
+
+[node name="BgBlue4" type="Sprite2D" parent="bg" unique_id=1483617768]
+position = Vector2(571.0001, 375.00003)
+scale = Vector2(4.5234375, 2.96875)
+texture = ExtResource("1_63yaa")
+
+[node name="TargetRed2Outline" type="Sprite2D" parent="." unique_id=1505990670]
+position = Vector2(257, 232)
+texture = ExtResource("3_8rdw0")
+
+[node name="DuckExplorer" parent="." unique_id=1099737925 instance=ExtResource("1_5iprl")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1331017601]
+stream = SubResource("AudioStreamInteractive_8rdw0")

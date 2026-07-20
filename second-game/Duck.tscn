@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c4yp74ce54bg1"]
+
+[ext_resource type="Texture2D" uid="uid://ckxdicjeyerqu" path="res://Assets/duck_outline_white.png" id="1_7lphl"]
+[ext_resource type="Script" uid="uid://dfhm8w8v8qswe" path="res://duck.gd" id="1_tbfnu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3msd4"]
+radius = 60.63827
+
+[node name="Duck" type="Area2D" unique_id=1698711848]
+script = ExtResource("1_tbfnu")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1763051681]
+texture = ExtResource("1_7lphl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=858664094]
+shape = SubResource("CircleShape2D_3msd4")
+
+[node name="Label" type="Label" parent="." unique_id=511750791]
+offset_left = -49.0
+offset_top = 73.0
+offset_right = 54.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 24
+text = "Press J"
+horizontal_alignment = 1
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=663046525]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cnd0ntfifsn21"]
+
+[ext_resource type="Script" uid="uid://cqhleutayo6jr" path="res://menu.gd" id="1_uubjt"]
+
+[node name="Menu" type="Node2D" unique_id=122760682]
+script = ExtResource("1_uubjt")
+
+[node name="Control" type="Control" parent="." unique_id=1472954743]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control" unique_id=999735312]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 219.0
+offset_right = 1116.0
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 58
+text = "Second Game "
+
+[node name="DuckRace" type="Button" parent="Control" unique_id=801068403]
+layout_mode = 0
+offset_left = 833.0
+offset_top = 403.0
+offset_right = 992.0
+offset_bottom = 456.0
+theme_override_font_sizes/font_size = 32
+text = "DuckRace
+"
+
+[node name="InfiniteScroller" type="Button" parent="Control" unique_id=1282862642]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 508.0
+offset_right = 1043.0
+offset_bottom = 561.0
+theme_override_font_sizes/font_size = 32
+text = "InfiniteScroller
+
+"
+
+[node name="Explorer" type="Button" parent="Control" unique_id=205817801]
+layout_mode = 0
+offset_left = 837.0
+offset_top = 614.0
+offset_right = 996.0
+offset_bottom = 667.0
+theme_override_font_sizes/font_size = 32
+text = "Explorer
+"
+
+[node name="Quit" type="Button" parent="Control" unique_id=1547595454]
+layout_mode = 0
+offset_left = 839.0
+offset_top = 814.0
+offset_right = 1008.0
+offset_bottom = 867.0
+theme_override_font_sizes/font_size = 32
+text = "Quit game"
+
+[connection signal="pressed" from="Control/DuckRace" to="." method="_on_duck_race_pressed"]
+[connection signal="pressed" from="Control/InfiniteScroller" to="." method="_on_infinite_scroller_pressed"]
+[connection signal="pressed" from="Control/Explorer" to="." method="_on_explorer_pressed"]
+[connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]

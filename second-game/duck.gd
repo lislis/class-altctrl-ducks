@@ -10,17 +10,21 @@ signal hit_target(name)
 var direction: int
 var move_duck: bool = false
 var label: String = "Press "
+var move_makey_key : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Sprite.texture = sprite
 	if go_right:
 		direction = 1
+		move_makey_key = KEY_RIGHT
 		$Sprite.flip_h = false
 	else:
 		direction = -1
+		move_makey_key = KEY_LEFT
 		$Sprite.flip_h = true
 	$Label.text  = label + move_key.to_upper()
+	$AnimationPlayer.play("wobble")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,10 +37,13 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_released():
 		# this converts the numeric key code into its "letter" representation
-		var key_pressed = OS.get_keycode_string(event.physical_keycode)
+		#var key_pressed = OS.get_keycode_string(event.physical_keycode)
 		# compare to the key we specified in the inspector
-		if key_pressed == move_key.to_upper():
+		#if key_pressed == move_key.to_upper():
+		if event.physical_keycode == move_makey_key:
 			move_duck = true
+			# play a single sound effect
+			$Audio.play()
 			#print("move true")
 
 func _on_area_entered(area: Area2D) -> void:

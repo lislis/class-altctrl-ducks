@@ -16,3 +16,5 @@ texture = ExtResource("1_tonxq")
 shape = SubResource("CircleShape2D_3msd4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=670447433]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1666673660]

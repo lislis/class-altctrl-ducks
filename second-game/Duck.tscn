@@ -6,8 +6,75 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3msd4"]
 radius = 60.63827
 
+[sub_resource type="Animation" id="Animation_tbfnu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dnh61"]
+resource_name = "jumping"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, -56), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5q5bb"]
+resource_name = "wobble"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.66, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.38571778, 0.28274333, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dnh61"]
+_data = {
+&"RESET": SubResource("Animation_tbfnu"),
+&"jumping": SubResource("Animation_dnh61"),
+&"wobble": SubResource("Animation_5q5bb")
+}
+
 [node name="Duck" type="Area2D" unique_id=1698711848]
 script = ExtResource("1_tbfnu")
+speed = 500
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1763051681]
 texture = ExtResource("1_7lphl")
@@ -25,5 +92,8 @@ text = "Press J"
 horizontal_alignment = 1
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=663046525]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=509338339]
+libraries/ = SubResource("AnimationLibrary_dnh61")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

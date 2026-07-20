@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://4t187nkfl6bt"]
+
+[ext_resource type="Texture2D" uid="uid://6txasc7ge0uh" path="res://Assets/target_red2_outline.png" id="1_pq6qt"]
+[ext_resource type="Script" uid="uid://fc5lxagcb8jl" path="res://interactive_target.gd" id="1_q8g1h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3msd4"]
+radius = 136.1323
+
+[node name="InteractiveTarget" type="Area2D" unique_id=199973683]
+script = ExtResource("1_q8g1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=965947826]
+shape = SubResource("CircleShape2D_3msd4")
+
+[node name="TargetRed2Outline" type="Sprite2D" parent="." unique_id=887596151]
+texture = ExtResource("1_pq6qt")
+
+[node name="Label" type="Label" parent="." unique_id=158847243]
+offset_left = -92.0
+offset_top = -124.0
+offset_right = 92.0
+offset_bottom = -94.0
+theme_override_font_sizes/font_size = 21
+text = "Press E to interact"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

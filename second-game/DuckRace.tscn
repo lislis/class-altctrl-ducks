@@ -11,25 +11,26 @@
 script = ExtResource("1_w4u8j")
 
 [node name="BgBlue" type="Sprite2D" parent="." unique_id=1326431951]
-scale = Vector2(7.519531, 4.2343745)
+scale = Vector2(4.2226563, 2.8242188)
 texture = ExtResource("1_krrcn")
 centered = false
 
 [node name="Target" parent="." unique_id=604975836 instance=ExtResource("5_yo5kh")]
-position = Vector2(962, 235)
+position = Vector2(540, 127)
 
 [node name="Target2" parent="." unique_id=1794422183 instance=ExtResource("5_yo5kh")]
-position = Vector2(969, 840)
+position = Vector2(542, 462)
 
 [node name="Duck" parent="." unique_id=1698711848 instance=ExtResource("2_um0lb")]
-position = Vector2(210, 231)
+position = Vector2(123, 123)
 sprite = ExtResource("3_5ryp6")
 move_key = "d"
 
 [node name="Duck2" parent="." unique_id=530317487 instance=ExtResource("2_um0lb")]
-position = Vector2(1743, 852)
+position = Vector2(993, 450)
 sprite = ExtResource("4_l3krs")
 move_key = "j"
+speed = 378
 go_right = false
 
 [node name="Timer" type="Timer" parent="." unique_id=1349487994]
@@ -37,6 +38,8 @@ wait_time = 2.0
 one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1839041165]
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="." unique_id=500540172]
 
 [connection signal="hit_target" from="Duck" to="." method="_on_duck_hit_target"]
 [connection signal="hit_target" from="Duck2" to="." method="_on_duck_hit_target"]
